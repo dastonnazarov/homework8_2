@@ -2,14 +2,28 @@ package atto.dto;
 
 import atto.enums.TransactionType;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
-
+@Entity
+@Table(name = "transaction")
 public class Transaction {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "card_number")
     private Integer card_number;
+
+    @Column(name = "terminal_code")
     private String terminal_code;
+
+    @Column(name = "amount")
     private Double amount;
+
+    @Column(name = "type")
     private TransactionType type;
+
+    @Column(name = "create_date")
     private LocalDateTime create_date;
 
 

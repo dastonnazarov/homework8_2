@@ -3,18 +3,37 @@ package atto.dto;
 import atto.enums.ProfileRole;
 import atto.enums.ProfileStatus;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
-
+@Entity
+@Table(name = "profile")
 public class Profile {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "surname")
     private String surname;
+
+    @Column(name = "phone")
     private String phone;//unique number
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "card_number")
     private String card_number;
+
+    @Column(name = "create_date")
     private LocalDate create_date;
+
+    @Column(name = "status")
     private ProfileStatus status;
+
+    @Column(name = "role")
     private ProfileRole role;
 
 

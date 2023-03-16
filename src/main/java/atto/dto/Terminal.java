@@ -2,14 +2,22 @@ package atto.dto;
 
 import atto.enums.TerminalStatus;
 
+import javax.persistence.*;
 import java.nio.file.FileSystems;
 import java.time.LocalDateTime;
-
+@Entity
+@Table(name = "terminal")
 public class Terminal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name = "code")
     private String code;
+    @Column(name = "address")
     private String address;
+    @Column(name = "status")
     private TerminalStatus status;
+    @Column(name = "create_date")
     private LocalDateTime create_date;
 
 

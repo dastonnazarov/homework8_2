@@ -12,10 +12,20 @@ public class Card {
     private Integer id;
     @Column(name = "number")
     private String number;
+
+    @Column(name = "balance")
     private Double balance = 50.00;
+
+    @Column(name = "status")
     private CardStatus status;
+
+    @Column(name = "phone")
     private String phone;
+
+    @Column(name = "create_date")
     private LocalDate create_date;
+
+    @Column(name = "exp_date")
     private String exp_date;
 
 
